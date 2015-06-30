@@ -28,6 +28,8 @@ def load_from_mongo(mongo_db,mongo_db_coll,return_cursor=False,criteria=None,pro
     else:
         return [item for item in cursor]
 
+
+#sample usage
 twitter_api=oauth_login.oauth_login()
 
 INDIA_WOE_ID=23424977
@@ -36,5 +38,5 @@ trends=extract.twitter_trends(twitter_api,INDIA_WOE_ID)
 
 print json.dumps(trends,indent=1)
 
-save_to_mongo(trends,'tweets','USA')
-results= load_from_mongo('tweets','USA')
+save_to_mongo(trends,'tweets','USA') #saving to mongo db
+results= load_from_mongo('tweets','USA') # loading from mongo db
